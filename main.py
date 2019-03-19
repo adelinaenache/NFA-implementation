@@ -1,5 +1,8 @@
 from Nfa import Nfa
 
+def prettyprint(word, nfa):
+    print ('The word {} is {}'.format(word, "accepted" if nfa.accepts(word) else "rejected"))
+
 def example1():
     alphabet = set(['a', 'b'])
     states = set(['p', 'q', 's', 'r'])
@@ -17,9 +20,9 @@ def example1():
     };
 
     nfa = Nfa(alphabet, states, initial_states, accepting_states, transitions)
-    print(nfa.accepts("bbabaaa"))
-    print(nfa.accepts("baabbbaaababbababb"))
-    print(nfa.accepts("bbbabb"))
+    prettyprint("bbabaaa", nfa)
+    prettyprint("baabbbaaababbababb", nfa)
+    prettyprint("bbbabb", nfa)
 
 def example2(): 
     alphabet = set(['a', 'b'])
@@ -36,13 +39,13 @@ def example2():
     };
 
     nfa = Nfa(alphabet, states, initial_states, accepting_states, transitions)
-    print(nfa.accepts("b"))
-    print(nfa.accepts("bbababbba"))
-    print(nfa.accepts("aa"))
+    prettyprint("b", nfa)
+    prettyprint("bbababbba", nfa)
+    prettyprint("aa", nfa)
 
 
-print ("******** Example 1 ********")
+print ("\n\n******** Example 1 ********\n")
 example1()
 
-print ("******** Example 2 ********")
+print ("\n\n******** Example 2 ********\n")
 example2()
