@@ -26,7 +26,7 @@ class Nfa:
         
         return next_states
 
-    def match_word(self, word):
+    def accepts(self, word):
         current_level = set()
         current_level = current_level.union(self.initial_states)
         next_level = set()

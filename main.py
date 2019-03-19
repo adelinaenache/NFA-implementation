@@ -17,9 +17,9 @@ def example1():
     };
 
     nfa = Nfa(alphabet, states, initial_states, accepting_states, transitions)
-    print(nfa.match_word("bbabaaa"))
-    print(nfa.match_word("baabbbaaababbababb"))
-    print(nfa.match_word("bbbabb"))
+    print(nfa.accepts("bbabaaa"))
+    print(nfa.accepts("baabbbaaababbababb"))
+    print(nfa.accepts("bbbabb"))
 
 def example2(): 
     alphabet = set(['a', 'b'])
@@ -36,9 +36,9 @@ def example2():
     };
 
     nfa = Nfa(alphabet, states, initial_states, accepting_states, transitions)
-    print(nfa.match_word("b"))
-    print(nfa.match_word("bbababbba"))
-    print(nfa.match_word("aa"))
+    print(nfa.accepts("b"))
+    print(nfa.accepts("bbababbba"))
+    print(nfa.accepts("aa"))
 
 
 print ("******** Example 1 ********")
